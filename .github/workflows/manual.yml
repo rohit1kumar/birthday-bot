@@ -1,21 +1,24 @@
-name: Manual
-
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 7 * * *'
+  workflow_dispatch: # This workflow can be manually triggered using the GitHub Actions tab
+  schedule: # This workflow will run on a cron schedule
+  - cron: '30 6 * * *' # 6:30 AM UTC or 12:00 AM IST
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # This workflow will run on the ubuntu-latest machine
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js 16.x
-        uses: actions/setup-node@v2
+      - name: Checkout code # This step checks out a copy of your repository on the ubuntu-latest machine
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x # This step sets up Node.js 16.x
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - name: Install dependencies
-        run: |
-          npm install --production
-      - name: Run script
+
+      - name: Install dependencies # This step installs all dependencies
+        run: npm ci
+      - name: Run script # This step runs the script
+        env: # This step uses the secrets stored in the GitHub repository's settings
+          WA_INSTANCE_ID: ${{ secrets.WA_INSTANCE_ID }}
+          WA_TOKEN: ${{ secrets.WA_TOKEN }}
         run: npm start

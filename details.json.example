@@ -1,12 +1,12 @@
 [
     {
         "name": "name of friend",
-        "number": "phone number",
-        "dob": "date of birth"
+        "number": "phone number without country code",
+        "dob": "date of birth (DD-MM-YYYY)"
     },
     {
         "name": "name of friend",
-        "number": "phone number",
-        "dob": "date of birth"
+        "number": "phone number without country code",
+        "dob": "date of birth (DD-MM-YYYY)"
     }
 ]
