@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest # This workflow will run on the ubuntu-latest machine
     steps:
       - name: Checkout code # This step checks out a copy of your repository on the ubuntu-latest machine
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js 16.x # This step sets up Node.js 16.x
         uses: actions/setup-node@v3
