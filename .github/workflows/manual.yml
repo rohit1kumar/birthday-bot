@@ -1,7 +1,8 @@
 on:
   workflow_dispatch: # This workflow can be manually triggered using the GitHub Actions tab
   schedule: # This workflow will run on a cron schedule
-  - cron: '30 6 * * *' # 6:30 AM UTC or 12:00 AM IST
+  - cron: '30 18 * * *' # 6:30 PM UTC or 12:00 AM IST
+  - timezone: Asia/Kolkata
 
 jobs:
   build:
